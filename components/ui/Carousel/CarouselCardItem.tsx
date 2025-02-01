@@ -7,6 +7,7 @@ export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
 export interface Item {
   url: string;
   display: string;
+  orientation: "portrait" | "landscape";
 }
 
 const CarouselCardItem: React.FC<{ item: Item; index: number }> = ({
@@ -26,18 +27,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: ITEM_WIDTH,
     paddingBottom: 40,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
-    shadowOpacity: 0.29,
-    shadowRadius: 4.65,
     elevation: 7,
   },
   image: {
     width: ITEM_WIDTH,
-    height: 300,
+    height: 250,
   },
   header: {
     color: "#222",

@@ -10,14 +10,15 @@ import CarouselCardItem, {
 
 export const ImageCarousel: React.FC<{ items: Item[] }> = ({ items }) => {
   const isCarousel = useRef(null);
-  console.log("items", items);
+
   return (
     <View>
       <Carousel
-        layout="tinder"
+        layout="default"
         layoutCardOffset={9}
         ref={isCarousel}
         data={items}
+        vertical={false}
         renderItem={CarouselCardItem}
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}
