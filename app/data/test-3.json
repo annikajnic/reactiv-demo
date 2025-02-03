@@ -5,17 +5,17 @@
       "https://placehold.co/400/pink/red",
       "https://placehold.co/600x400/orange/white"
     ],
-    "display": "landscape"
+    "display": "square"
   },
   "textArea": {
     "title": "Welcome to Our App",
-    "description": "Quickly launch engaging mobile app experiences with push notifications that don’t require downloads. Increase your add-to-carts, recapture abandoned cart revenue, and double the value of every click. ",
+    "description": "This is the home screen of our app. ",
     "titleColor": "#FF5733",
     "descriptionColor": "#333333"
   },
   "callToAction": {
     "label": "Get Started",
-    "link": "https://www.reactivapp.com/",
+    "link": "https://example.com/start",
     "buttonColor": "#007BFF",
     "labelColor": "#FFFFFF"
   }

@@ -7,9 +7,8 @@ import { Item } from "@/components/ui/Carousel/CarouselCardItem";
 import { CallToActionItem } from "@/components/ui/CallToActionItem";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
-import { IconSymbol } from "@/components/ui/IconSymbol";
 
-const data = require("../data/test-1.json");
+const data = require("../data/test-3.json");
 
 export default function HomeScreen() {
   const carouselImages: Item[] = data.carousel.images.map((url: string) => ({
@@ -34,7 +33,9 @@ export default function HomeScreen() {
     >
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">{data.textArea.title}</ThemedText>
-        <ThemedText type="default">{data.textArea.subtitle}</ThemedText>
+      </ThemedView>
+      <ThemedView>
+        <ThemedText type="default">{data.textArea.description}</ThemedText>
       </ThemedView>
       <ThemedView>
         <CallToActionItem {...data.callToAction} />

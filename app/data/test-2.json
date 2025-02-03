@@ -11,7 +11,7 @@
       "https://placehold.co/400/pink/red",
       "https://placehold.co/600x400/orange/white"
     ],
-    "display": "landscape"
+    "display": "portrait"
   },
   "textArea": {
     "title": "Welcome to Our App",
@@ -21,7 +21,7 @@
   },
   "callToAction": {
     "label": "Get Started",
-    "link": "https://example.com/start",
+    "link": "https://www.reactivapp.com/",
     "buttonColor": "#007BFF",
     "labelColor": "#FFFFFF"
   }

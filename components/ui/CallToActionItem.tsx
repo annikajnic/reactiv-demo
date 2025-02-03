@@ -1,35 +1,34 @@
-import React, { useCallback } from "react";
-import { Alert, Linking, Text, TouchableOpacity } from "react-native";
-import { ExternalLink } from "../ExternalLink";
+import React from "react";
+import { Linking, TouchableOpacity } from "react-native";
 import { ThemedText } from "../ThemedText";
 
 interface Props {
-  title: string;
+  label: string;
   link: string;
-  buttonColour: string;
-  labelColour: string;
+  buttonColor: string;
+  labelColor: string;
 }
 
 export const CallToActionItem: React.FC<Props> = ({
-  title,
+  label,
   link,
-  buttonColour,
-  labelColour,
+  buttonColor,
+  labelColor,
 }) => {
   return (
-    <ExternalLink href={link}>
-      <TouchableOpacity
-        style={{
-          backgroundColor: buttonColour,
-          padding: 10,
-          borderRadius: 5,
-        }}
-        onPress={() => {
-          Linking.openURL(link);
-        }}
-      >
-        <ThemedText style={{ color: labelColour }}>{title}</ThemedText>
-      </TouchableOpacity>
-    </ExternalLink>
+    <TouchableOpacity
+      style={{
+        backgroundColor: buttonColor,
+        padding: 10,
+        borderRadius: 5,
+      }}
+      onPress={() => {
+        Linking.openURL(link);
+      }}
+    >
+      <ThemedText style={{ color: labelColor, textAlign: "center" }}>
+        {label}
+      </ThemedText>
+    </TouchableOpacity>
   );
 };

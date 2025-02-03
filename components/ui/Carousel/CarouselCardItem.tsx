@@ -1,25 +1,52 @@
 import React from "react";
 import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
+import Carousel from "react-native-snap-carousel";
+import styled from "styled-components";
 
 export const SLIDER_WIDTH = Dimensions.get("window").width + 80;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
 
+function carouselOrentation(orientation: string): number {
+  switch (orientation) {
+    case "portrait":
+      return 400;
+    case "landscape":
+      return 250;
+    default:
+      return ITEM_WIDTH;
+  }
+}
+
 export interface Item {
   url: string;
-  display: string;
-  orientation: "portrait" | "landscape";
+  display: "portrait" | "landscape" | "square";
 }
 
 const CarouselCardItem: React.FC<{ item: Item; index: number }> = ({
   item,
   index,
 }) => {
+  const imageHeight = carouselOrentation(item.display);
+  console.log(imageHeight);
   return (
-    <View style={styles.container} key={index}>
-      <Image source={{ uri: item.url }} style={styles.image} />
-    </View>
+    <CarouselView key={index}>
+      <Image
+        source={{ uri: item.url }}
+        style={{
+          width: ITEM_WIDTH,
+          height: imageHeight,
+        }}
+      />
+    </CarouselView>
   );
 };
+
+const CarouselView = styled(View)`
+  backgroundcolor: white;
+  borderradius: 8;
+  width: ${ITEM_WIDTH}px;
+  elevation: 7;
+`;
 
 const styles = StyleSheet.create({
   container: {
