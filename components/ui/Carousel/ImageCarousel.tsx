@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import { Image, View } from "react-native";
+import { View } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import CarouselCardItem, {
   Item,
