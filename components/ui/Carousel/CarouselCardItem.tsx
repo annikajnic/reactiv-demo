@@ -1,5 +1,6 @@
 import React from "react";
-import { Dimensions, Image, ImageSourcePropType } from "react-native";
+import { Dimensions } from "react-native";
+import { Image } from "expo-image";
 import styled from "styled-components";
 import { ThemedView } from "../../ThemedView";
 
@@ -19,8 +20,11 @@ function carouselOrentation(orientation: string): number {
 
 export interface Item {
   url: string;
-  display: "portrait" | "landscape" | "square";
+  display: string;
 }
+
+const blurhash =
+  "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
 const CarouselCardItem: React.FC<{ item: Item; index: number }> = ({
   item,
@@ -31,11 +35,14 @@ const CarouselCardItem: React.FC<{ item: Item; index: number }> = ({
   return (
     <CarouselView>
       <Image
-        defaultSource={{ uri: item.url }}
+        source={item.url}
+        contentFit="fill"
+        placeholder={{ blurhash }}
         style={{
+          flex: 1,
           width: ITEM_WIDTH,
-          height: imageHeight,
-          aspectRatio: 1,
+          minHeight: imageHeight,
+          backgroundColor: "#0553",
         }}
       />
     </CarouselView>

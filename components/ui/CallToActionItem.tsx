@@ -1,6 +1,7 @@
 import React from "react";
 import { Linking, TouchableOpacity } from "react-native";
 import { ThemedText } from "../ThemedText";
+import { ExternalLink } from "../ExternalLink";
 
 interface Props {
   label: string;
@@ -16,19 +17,17 @@ export const CallToActionItem: React.FC<Props> = ({
   labelColor,
 }) => {
   return (
-    <TouchableOpacity
+    <ExternalLink
       style={{
         backgroundColor: buttonColor,
         padding: 10,
         borderRadius: 5,
       }}
-      onPress={() => {
-        Linking.openURL(link);
-      }}
+      href={link}
     >
       <ThemedText style={{ color: labelColor, textAlign: "center" }}>
         {label}
       </ThemedText>
-    </TouchableOpacity>
+    </ExternalLink>
   );
 };

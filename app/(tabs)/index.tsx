@@ -2,43 +2,87 @@ import { View, Text, Button, StyleSheet } from "react-native";
 import styled from "styled-components";
 
 import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ImageCarousel } from "@/components/ui/Carousel/ImageCarousel";
+import { CarouselItems } from "@/components/ui/Carousel/Carouseltems";
 import { Item } from "@/components/ui/Carousel/CarouselCardItem";
 import { CallToActionItem } from "@/components/ui/CallToActionItem";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
+import useConfigurationContext from "../../hooks/useConfigurationContext";
+import { useEffect, useState } from "react";
 
-const data = require("../data/test-3.json");
+import test1 from "../data/test-1.json";
+import test2 from "../data/test-2.json";
+import test3 from "../data/test-3.json";
+
+export interface JsonData {
+  carousel: {
+    images: string[];
+    display: string;
+  };
+  textArea: {
+    title: string;
+    description: string;
+    titleColor: string;
+    descriptionColor: string;
+  };
+  callToAction: {
+    label: string;
+    link: string;
+    buttonColor: string;
+    labelColor: string;
+  };
+}
 
 export default function HomeScreen() {
-  const carouselImages: Item[] = data.carousel.images.map((url: string) => ({
-    url: url,
-    display: data.carousel.display,
-  }));
+  const { configurationPath } = useConfigurationContext();
+  const [jsonData, setJsonData] = useState<JsonData | null>(null);
+
+  useEffect(() => {
+    switch (configurationPath) {
+      case "test-2.json":
+        setJsonData(test2);
+        break;
+      case "test-3.json":
+        setJsonData(test3);
+        break;
+      default:
+        setJsonData(test1);
+        break;
+    }
+  }, [configurationPath]);
+
+  if (!jsonData) {
+    return (
+      <Container>
+        <ThemedText type="title">Loading...</ThemedText>
+      </Container>
+    );
+  }
+
+  const carouselImages: Item[] = jsonData.carousel.images.map(
+    (url: string) => ({
+      url: url,
+      display: jsonData.carousel.display,
+    })
+  );
 
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#D0D0D0", dark: "#353636" }}
       headerImage={
-        <Container
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <ImageCarousel items={carouselImages} />
+        <Container>
+          <CarouselItems items={carouselImages} />
         </Container>
       }
     >
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">{data.textArea.title}</ThemedText>
+      <TitleContainer>
+        <ThemedText type="title">{jsonData.textArea.title}</ThemedText>
+      </TitleContainer>
+      <ThemedView>
+        <ThemedText type="default">{jsonData.textArea.description}</ThemedText>
       </ThemedView>
       <ThemedView>
-        <ThemedText type="default">{data.textArea.description}</ThemedText>
-      </ThemedView>
-      <ThemedView>
-        <CallToActionItem {...data.callToAction} />
+        <CallToActionItem {...jsonData.callToAction} />
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -48,23 +92,10 @@ const Container = styled(View)`
   flex: 1;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  padding-top: 60px;
 `;
 
-const Title = styled(Text)`
-  font-size: 30px;
-  font-weight: bold;
-  color: #000000;
+export const TitleContainer = styled(ThemedView)`
+  padding: 20px 0 20px 0;
+  flex-direction: row;
 `;
-const Description = styled(Text)`
-  font-size: 25px;
-  font-weight: bold;
-  color: #000000;
-`;
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: "row",
-    gap: 8,
-  },
-});

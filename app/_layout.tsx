@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
-import ConfigurationProvider from "./ConfigurationProvider";
+import ConfigurationProvider from "./providers/ConfigurationProvider";
 import { CONFIGURATION_OPTIONS } from "@/constants/Configurations";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
