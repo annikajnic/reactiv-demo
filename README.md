@@ -52,6 +52,10 @@ My first approach was in to import all the test files on load because I had some
 
 ## Design
 
+![Simulator Screenshot - iPhone 15 Pro - 2025-02-04 at 10 49 52](https://github.com/user-attachments/assets/dde59159-a021-42e0-9137-cc942a375794)
+![Simulator Screenshot - iPhone 15 Pro - 2025-02-04 at 10 49 48](https://github.com/user-attachments/assets/ef2692c2-2683-47cc-9cf7-9b17d209ccec)
+
 \*Loom Video
 
 # Improvements
+
