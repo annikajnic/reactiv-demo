@@ -33,10 +33,10 @@ You can start developing by editing the files inside the **app** directory. This
 
 ## Development Decisions
 
-Carousel - react-native-snap-carousel - I chose this carousel package because it was well documented and was a light weight package. Also has a large community which is a good sign for good functionality and flexibility.
+Carousel - react-native-snap-carousel - I chose this carousel package because it was well-documented and was a lightweight package. Also has a large community which is a good sign for good functionality and flexibility.
 https://www.npmjs.com/package/react-native-snap-carousel
 
-Styled Component - I have a preference using styled components because it's a clean way to inject css to a component and the ability to export and reused the styled component.
+Styled Component - I have a preference for using styled-components because it's a clean way to inject css into a component and the ability to export and reuse the styled component.
 https://styled-components.com/
 
 ### Homepage
@@ -54,7 +54,7 @@ I have provided three test examples, showing landscape, portrait and square view
 Assumptions
 
 - Test data is a defined type
-- Test data will be held in a single json file
+- Test data will be held in a single JSON file
 
 My first approach was to import all the test files on load because I had some limitations with dynamically importing the JSON files. Thinking about this app's scalability, this approach is not ideal. I used json-server to post the JSON file to port 3000, allowing me to utilize the JSON file as an API call. This also mimics a real-world app and enables me to render only the selected carousel's images, which images can hold a lot of storage, causing apps to slow down. Other tools can be used to help with large image files, like image compressors or a view renderer that only renders the images in view.
 
