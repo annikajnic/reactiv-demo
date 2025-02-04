@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { Platform, View } from "react-native";
 import styled from "styled-components";
 
 import ParallaxScrollView from "@/components/ParallaxScrollView";
@@ -10,7 +10,10 @@ import { ThemedText } from "@/components/ThemedText";
 import useConfigurationContext from "../../hooks/useConfigurationContext";
 import { useEffect, useState } from "react";
 
-const API_PATH = "http://localhost:3000/";
+// Android emulator runs behind a virtual router/firewall, it cannot see the development machine
+// so we need to use a virtual router instance 10.0.2.2. Ieealy this value would be stored in a .env environment
+const API_PATH =
+  Platform.OS == "ios" ? "http://localhost:3000/" : "http://10.0.2.2:3000/";
 
 export interface JsonData {
   carousel: {
