@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 // Android emulator runs behind a virtual router/firewall, it cannot see the development machine
 // so we need to use a virtual router instance 10.0.2.2. Ieealy this value would be stored in a .env environment
 const API_PATH =
-  Platform.OS == "ios" ? "http://localhost:3000/" : "http://10.0.2.2:3000/";
+  Platform.OS == "android" ? "http://10.0.2.2:3000/" : "http://localhost:3000/";
 
 export interface JsonData {
   carousel: {
