@@ -19,7 +19,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 3. Start the json-server
 
    ```bash
-   json-server --watch data/test.json --port 3000
+   npx json-server --watch data/test.json --port 3000
    ```
 
 In the output, you'll find options to open the app in a
