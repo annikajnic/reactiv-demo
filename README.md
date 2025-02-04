@@ -16,6 +16,12 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     npx expo start
    ```
 
+3. Start the json-server
+
+   ```bash
+   json-server --watch data/test.json --port 3000
+   ```
+
 In the output, you'll find options to open the app in a
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
@@ -25,26 +31,27 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Development Decisions
 
-When you're ready, run:
+Carousel - react-native-snap-carousel - I chose this carousel package because it was well documented and was a light weight package. Also has a large community which is a good sign for good functionality and flexibility.
+https://www.npmjs.com/package/react-native-snap-carousel
 
-```bash
-npm run reset-project
-```
+Styled Component - I have a preference using styled components because it's a clean way to inject css to a component and the ability to export and reused the styled component.
+https://styled-components.com/
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+# Test Data
 
-## Learn more
+I have provided three test examples, showing landscape, portait and square views.
 
-To learn more about developing your project with Expo, look at the following resources:
+Assumptions
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- Test data is a defined type
+- Test data will be held in a single json file
 
-## Join the community
+My first approach was in to import all the test files on load because I had some limitations with dynamically importing the json files. Thinking about this app's scalibility this approach is not ideal. I used json-server to post the json file to port 3000 allowing me utilize the json file as an API call. This also mimics a real world app and allows me to render only the selected carousel's images which images can hold a lot of storage causing apps to slow down. Other tools can be used to help with large image files like image compressors or have a in view renderer that only renders the images in view.
 
-Join our community of developers creating universal apps.
+## Design
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+\*Loom Video
+
+# Improvements
