@@ -22,6 +22,7 @@ export const CarouselItems: React.FC<{ items: Item[] }> = ({ items }) => {
         shouldOptimizeUpdates
         onScrollIndexChanged={setActiveIndex}
         layoutCardOffset={9}
+        firstItem={activeIndex}
         data={items}
         vertical={false}
         renderItem={CarouselCardItem}

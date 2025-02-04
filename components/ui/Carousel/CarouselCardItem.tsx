@@ -28,7 +28,6 @@ const blurhash =
 
 const CarouselCardItem: React.FC<{ item: Item; index: number }> = ({
   item,
-  index,
 }) => {
   const imageHeight = carouselOrentation(item.display);
 
