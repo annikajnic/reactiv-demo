@@ -49,7 +49,7 @@ For managing the different test data. When you click on a new test data set it w
 
 ## Test Data
 
-I have provided three test examples, showing landscape, portait and square views.
+I have provided three test examples, showing landscape, portrait and square views.
 
 Assumptions
 
@@ -65,4 +65,4 @@ Another approach that I troubleshooted but didn't end up going with was utilizin
 <img src="https://github.com/user-attachments/assets/ef2692c2-2683-47cc-9cf7-9b17d209ccec" width="150" />
 <img src="https://github.com/user-attachments/assets/dde59159-a021-42e0-9137-cc942a375794" width="150" />
 
-Explaination on designs: [Loom Video](https://www.loom.com/share/995a3b79ad9d4069bc939de14d4179c6)
+Designs explanation: [Loom Video](https://www.loom.com/share/995a3b79ad9d4069bc939de14d4179c6)
