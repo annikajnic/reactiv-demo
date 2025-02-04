@@ -1,0 +1,80 @@
+[
+  {
+    "carousel": {
+      "images": [
+        "https://picsum.photos/500/300",
+        "https://picsum.photos/400/200",
+        "https://picsum.photos/600/400"
+      ],
+      "display": "landscape"
+    },
+    "textArea": {
+      "title": "Welcome to Our App",
+      "description": "Quickly launch engaging mobile app experiences with push notifications that don’t require downloads. Increase your add-to-carts, recapture abandoned cart revenue, and double the value of every click. ",
+      "titleColor": "#000",
+      "descriptionColor": "#333333"
+    },
+    "callToAction": {
+      "label": "Get Started",
+      "link": "https://www.reactivapp.com/",
+      "buttonColor": "#007BFF",
+      "labelColor": "#FFFFFF"
+    }
+  },
+  {
+    "carousel": {
+      "images": [
+        "https://picsum.photos/290/400",
+        "https://picsum.photos/320/500",
+        "https://picsum.photos/300/400",
+        "https://picsum.photos/300/600",
+        "https://picsum.photos/310/600",
+        "https://picsum.photos/300/650",
+        "https://picsum.photos/350/400",
+        "https://picsum.photos/250/390",
+        "https://picsum.photos/210/300",
+        "https://picsum.photos/150/300",
+        "https://picsum.photos/100/200"
+      ],
+      "display": "portrait"
+    },
+    "textArea": {
+      "title": "Welcome to Our App",
+      "description": "This is the home screen of our app. ",
+      "titleColor": "#FF5733",
+      "descriptionColor": "#333333"
+    },
+    "callToAction": {
+      "label": "Get Started",
+      "link": "https://www.reactivapp.com/",
+      "buttonColor": "#007BFF",
+      "labelColor": "#FFFFFF"
+    }
+  },
+  {
+    "carousel": {
+      "images": [
+        "https://picsum.photos/290/",
+        "https://picsum.photos/300/",
+        "https://picsum.photos/310/",
+        "https://picsum.photos/350/",
+        "https://picsum.photos/360/",
+        "https://picsum.photos/370/",
+        "https://picsum.photos/380/"
+      ],
+      "display": "square"
+    },
+    "textArea": {
+      "title": "Welcome to Our App",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "titleColor": "#FF5733",
+      "descriptionColor": "#333333"
+    },
+    "callToAction": {
+      "label": "Get Started",
+      "link": "https://www.reactivapp.com/",
+      "buttonColor": "#008000",
+      "labelColor": "#FFFFFF"
+    }
+  }
+]

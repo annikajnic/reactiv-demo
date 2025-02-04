@@ -2,13 +2,29 @@ import { TouchableOpacity, FlatList, useColorScheme } from "react-native";
 
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import {
-  CONFIGURATION_OPTIONS,
-  ConfigurationItem,
-} from "@/constants/Configurations";
 import useConfigurationContext from "../../hooks/useConfigurationContext";
 import { TitleContainer } from ".";
 import { Colors } from "@/constants/Colors";
+
+export type ConfigurationItem = {
+  id: number;
+  label: string;
+};
+
+export const CONFIGURATION_OPTIONS: ConfigurationItem[] = [
+  {
+    id: 0,
+    label: "Landscape",
+  },
+  {
+    id: 1,
+    label: "Portrait",
+  },
+  {
+    id: 2,
+    label: "Square",
+  },
+];
 
 type ItemProps = {
   item: ConfigurationItem;
@@ -26,10 +42,8 @@ const Item = ({ item, onPress, backgroundColor, textColor }: ItemProps) => (
 );
 
 export default function TabTwoScreen() {
-  const { configurationPath, setConfigurationPath } = useConfigurationContext();
-  const selectedConfiguration = CONFIGURATION_OPTIONS.find(
-    (config) => configurationPath === config.path
-  );
+  const { configurationIndex, setConfigurationIndex } =
+    useConfigurationContext();
   const colorScheme = useColorScheme();
 
   return (
@@ -38,24 +52,20 @@ export default function TabTwoScreen() {
         <ThemedText type="title">Settings</ThemedText>
       </TitleContainer>
       <ThemedText style={{ marginBottom: 20, color: "#808080" }}>
-        Select a test file to change the home screen.
+        Select a test case to change the look of the homepage.
       </ThemedText>
       <FlatList
         data={CONFIGURATION_OPTIONS}
-        renderItem={({ item }) => (
+        renderItem={({ item, index }) => (
           <Item
             item={item}
-            onPress={() => setConfigurationPath(item.path)}
+            onPress={() => setConfigurationIndex(index)}
             backgroundColor={
-              selectedConfiguration && selectedConfiguration.id === item.id
+              configurationIndex === index
                 ? Colors[colorScheme ?? "light"].tint
                 : "#FFFFFF"
             }
-            textColor={
-              selectedConfiguration && selectedConfiguration.id === item.id
-                ? "white"
-                : "#000000"
-            }
+            textColor={configurationIndex === index ? "white" : "#000000"}
           />
         )}
       />

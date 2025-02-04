@@ -10,9 +10,7 @@ import { ThemedText } from "@/components/ThemedText";
 import useConfigurationContext from "../../hooks/useConfigurationContext";
 import { useEffect, useState } from "react";
 
-import test1 from "../data/test-1.json";
-import test2 from "../data/test-2.json";
-import test3 from "../data/test-3.json";
+const API_PATH = "http://localhost:3000/";
 
 export interface JsonData {
   carousel: {
@@ -34,22 +32,22 @@ export interface JsonData {
 }
 
 export default function HomeScreen() {
-  const { configurationPath } = useConfigurationContext();
+  const { configurationIndex } = useConfigurationContext();
   const [jsonData, setJsonData] = useState<JsonData | null>(null);
 
-  useEffect(() => {
-    switch (configurationPath) {
-      case "test-2.json":
-        setJsonData(test2);
-        break;
-      case "test-3.json":
-        setJsonData(test3);
-        break;
-      default:
-        setJsonData(test1);
-        break;
+  const fetchData = async () => {
+    try {
+      const response = await fetch(API_PATH + configurationIndex);
+      const result = await response.json();
+      setJsonData(result);
+    } catch (error) {
+      console.error("Error:", error);
     }
-  }, [configurationPath]);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [configurationIndex]);
 
   if (!jsonData) {
     return (
@@ -76,10 +74,20 @@ export default function HomeScreen() {
       }
     >
       <TitleContainer>
-        <ThemedText type="title">{jsonData.textArea.title}</ThemedText>
+        <ThemedText
+          type="title"
+          style={{ color: jsonData.textArea.titleColor }}
+        >
+          {jsonData.textArea.title}
+        </ThemedText>
       </TitleContainer>
       <ThemedView>
-        <ThemedText type="default">{jsonData.textArea.description}</ThemedText>
+        <ThemedText
+          type="default"
+          style={{ color: jsonData.textArea.descriptionColor }}
+        >
+          {jsonData.textArea.description}
+        </ThemedText>
       </ThemedView>
       <ThemedView>
         <CallToActionItem {...jsonData.callToAction} />

@@ -1,17 +1,16 @@
-import { CONFIGURATION_OPTIONS } from "@/constants/Configurations";
 import { useState } from "react";
 import ConfigurationContext from "./ConfigurationContext";
 
 interface Props {
   children: React.ReactNode;
-  pathValue: string;
+  index: number;
 }
 
-const ConfigurationProvider: React.FC<Props> = ({ children, pathValue }) => {
-  const [configurationPath, setConfigurationPath] = useState(pathValue);
+const ConfigurationProvider: React.FC<Props> = ({ children, index }) => {
+  const [configurationIndex, setConfigurationIndex] = useState(index);
   return (
     <ConfigurationContext.Provider
-      value={{ configurationPath, setConfigurationPath }}
+      value={{ configurationIndex, setConfigurationIndex }}
     >
       {children}
     </ConfigurationContext.Provider>

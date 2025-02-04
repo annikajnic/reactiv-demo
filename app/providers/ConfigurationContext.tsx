@@ -1,15 +1,13 @@
-import { CONFIGURATION_OPTIONS } from "@/constants/Configurations";
 import { createContext } from "react";
-import ConfigurationProvider from "./ConfigurationProvider";
 
 interface ConfigurationContext {
-  configurationPath: string;
-  setConfigurationPath: (value: string) => void;
+  configurationIndex: number;
+  setConfigurationIndex: (value: number) => void;
 }
 
 const defaultValue: ConfigurationContext = {
-  configurationPath: CONFIGURATION_OPTIONS[0].path,
-  setConfigurationPath: () => {},
+  configurationIndex: 0,
+  setConfigurationIndex: () => {},
 };
 
 export default createContext<ConfigurationContext>(defaultValue);
