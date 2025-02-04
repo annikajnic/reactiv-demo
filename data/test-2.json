@@ -1,0 +1,26 @@
+{
+  "carousel": {
+    "images": [
+      "https://picsum.photos/290/",
+      "https://picsum.photos/300/",
+      "https://picsum.photos/310/",
+      "https://picsum.photos/350/",
+      "https://picsum.photos/360/",
+      "https://picsum.photos/370/",
+      "https://picsum.photos/380/"
+    ],
+    "display": "square"
+  },
+  "textArea": {
+    "title": "This is square",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "titleColor": "#008000",
+    "descriptionColor": "#26220c"
+  },
+  "callToAction": {
+    "label": "Get Started",
+    "link": "https://www.reactivapp.com/",
+    "buttonColor": "#008000",
+    "labelColor": "#FFFFFF"
+  }
+}

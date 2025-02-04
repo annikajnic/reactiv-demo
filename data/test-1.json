@@ -1,0 +1,30 @@
+{
+  "carousel": {
+    "images": [
+      "https://picsum.photos/290/400",
+      "https://picsum.photos/320/500",
+      "https://picsum.photos/300/400",
+      "https://picsum.photos/300/600",
+      "https://picsum.photos/310/600",
+      "https://picsum.photos/300/650",
+      "https://picsum.photos/350/400",
+      "https://picsum.photos/500/750",
+      "https://picsum.photos/500/810",
+      "https://picsum.photos/500/800",
+      "https://picsum.photos/450/800"
+    ],
+    "display": "portrait"
+  },
+  "textArea": {
+    "title": "This is portrait",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "titleColor": "#FF5733",
+    "descriptionColor": "#808080"
+  },
+  "callToAction": {
+    "label": "Get Started",
+    "link": "https://www.reactivapp.com/",
+    "buttonColor": "#f40c0c",
+    "labelColor": "#FFFFFF"
+  }
+}
