@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React, { useEffect } from "react";
 
-import { FlatList, ScrollView, View } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import CarouselCardItem, {
   Item,
@@ -10,6 +9,12 @@ import CarouselCardItem, {
 
 export const CarouselItems: React.FC<{ items: Item[] }> = ({ items }) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
+
+  //watch for items changes to reset the value to 0
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [items]);
+
   return (
     <>
       <Carousel
