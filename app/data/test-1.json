@@ -1,9 +1,9 @@
 {
   "carousel": {
     "images": [
-      "https://placehold.co/600x400/purple/white",
-      "https://placehold.co/400/pink/red",
-      "https://placehold.co/600x400/orange/white"
+      "https://picsum.photos/500/300",
+      "https://picsum.photos/400/200",
+      "https://picsum.photos/600/400"
     ],
     "display": "landscape"
   },
