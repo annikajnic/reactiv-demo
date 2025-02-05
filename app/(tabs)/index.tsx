@@ -64,7 +64,7 @@ export default function HomeScreen() {
           Loading...
         </ThemedText>
         <ThemedText type="default" style={{ padding: 20, textAlign: "center" }}>
-          Make sure you are connect to the server and try again
+          Make sure you are connected to the server and try again
         </ThemedText>
       </Container>
     );
