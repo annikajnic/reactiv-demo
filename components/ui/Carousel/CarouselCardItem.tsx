@@ -35,7 +35,6 @@ const CarouselCardItem: React.FC<{ item: Item; index: number }> = ({
     <CarouselView>
       <Image
         source={item.url}
-        contentFit="fill"
         placeholder={{ blurhash }}
         style={{
           flex: 1,

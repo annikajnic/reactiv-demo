@@ -1,5 +1,5 @@
+import ConfigurationContext from "@/components/providers/ConfigurationContext";
 import { useContext } from "react";
-import ConfigurationContext from "../app/providers/ConfigurationContext";
 
 function useConfigurationContext() {
   return useContext(ConfigurationContext);

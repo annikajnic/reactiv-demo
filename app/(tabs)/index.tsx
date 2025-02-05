@@ -7,8 +7,8 @@ import { Item } from "@/components/ui/Carousel/CarouselCardItem";
 import { CallToActionItem } from "@/components/ui/CallToActionItem";
 import { ThemedView } from "@/components/ThemedView";
 import { ThemedText } from "@/components/ThemedText";
-import useConfigurationContext from "../../hooks/useConfigurationContext";
 import { useEffect, useState } from "react";
+import useConfigurationContext from "@/hooks/useConfigurationContext";
 
 // Android emulator runs behind a virtual router/firewall, it cannot see the development machine
 // so we need to use a virtual router instance 10.0.2.2. Ideally this value would be stored in a .env file
@@ -38,24 +38,28 @@ export default function HomeScreen() {
   const { configurationIndex } = useConfigurationContext();
   const [jsonData, setJsonData] = useState<JsonData | null>(null);
 
+  useEffect(() => {
+    fetchData();
+  }, [configurationIndex]);
+
   const fetchData = async () => {
     try {
       const response = await fetch(API_PATH + configurationIndex);
       const result = await response.json();
       setJsonData(result);
     } catch (error) {
-      console.error("Error:", error);
+      if (error instanceof Error) {
+        console.error(error.message);
+      }
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, [configurationIndex]);
 
   if (!jsonData) {
     return (
       <Container>
-        <ThemedText type="title">Loading...</ThemedText>
+        <ThemedText type="title" style={{ padding: 20, textAlign: "center" }}>
+          Loading...
+        </ThemedText>
       </Container>
     );
   }

@@ -41,7 +41,7 @@ const Item = ({ item, onPress, backgroundColor, textColor }: ItemProps) => (
   </TouchableOpacity>
 );
 
-export default function TabTwoScreen() {
+export default function Settings() {
   const { configurationIndex, setConfigurationIndex } =
     useConfigurationContext();
   const colorScheme = useColorScheme();
