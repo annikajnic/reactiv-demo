@@ -13,7 +13,9 @@ import useConfigurationContext from "@/hooks/useConfigurationContext";
 // Android emulator runs behind a virtual router/firewall, it cannot see the development machine
 // so we need to use a virtual router instance 10.0.2.2. Ideally this value would be stored in a .env file
 const API_PATH =
-  Platform.OS == "android" ? "http://10.0.2.2:3000/" : "http://localhost:3000/";
+  Platform.OS === "android"
+    ? "http://10.0.2.2:3000/"
+    : "http://localhost:3000/";
 
 export interface JsonData {
   carousel: {
@@ -40,6 +42,7 @@ export default function HomeScreen() {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [configurationIndex]);
 
   const fetchData = async () => {
