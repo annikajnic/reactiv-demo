@@ -10,16 +10,16 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-3. Start the json-server
+2. Start the json-server
 
    ```bash
    npx json-server --watch data/test.json --port 3000
+   ```
+
+3. Start the app
+
+   ```bash
+    npx expo start
    ```
 
 In the output, you'll find options to open the app in a
@@ -63,6 +63,6 @@ Assumptions
 - Test data is a defined type
 - Test data will be held in a single JSON file
 
-My first approach was to import all the test files on load because I had some limitations with dynamically importing the JSON files. Thinking about this app's scalability, this approach is not ideal. I used json-server to post the JSON file to port 3000, allowing me to utilize the JSON file as an API call. This also mimics a real-world app and enables me to render only the selected carousel's images, which images can hold a lot of storage, causing apps to slow down. Other tools can be used to help with large image files, like image compressors or a view renderer that only renders the images in view.
+My first approach was to import all the test files on load because I had some limitations with dynamically importing the JSON files with Typescript. Thinking about this app's scalability, this approach is not ideal. I used json-server to post the JSON file to port 3000, allowing me to utilize the JSON file as an API call. This also mimics a real-world app and enables me to render only the selected carousel's images, which images can hold a lot of storage, causing apps to slow down. Other tools can be used to help with large image files, like image compressors or a view renderer that only renders the images in view.
 
 Another approach that I troubleshooted but didn't end up going with was utilizing expo-file-system. This approach required the files to be saved to the documentDirectory when the app loaded. Thinking about long-term scalability and speed of the app I don't think it was the right solution. Furthermore, documentDirectory is only utilized in the simulators and not the web view so the data would never load due to a 404.
