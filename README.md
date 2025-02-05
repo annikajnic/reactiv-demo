@@ -52,7 +52,7 @@ For managing the different test data. When you click on a new test data set it w
 <img src="https://github.com/user-attachments/assets/ef2692c2-2683-47cc-9cf7-9b17d209ccec" width="150" />
 <img src="https://github.com/user-attachments/assets/dde59159-a021-42e0-9137-cc942a375794" width="150" />
 
-### Designs explanation: [(https://www.loom.com/share/995a3b79ad9d4069bc939de14d4179c6)]
+### Designs explanation: https://www.loom.com/share/995a3b79ad9d4069bc939de14d4179c6
 
 ## Test Data
 
